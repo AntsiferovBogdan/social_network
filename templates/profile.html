@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+
+  <h2 class="text-center">{{ profile_user.first_name }} {{ profile_user.last_name }}'s Profile</h2>
+
+  <div class="row justify-content-center align-items-center mt-4">
+    
+    <div class="col-md-2"></div>
+
+    <div class="col-md-3 text-center">
+      {% if profile_user.avatar %}
+          <img src="{{ profile_user.avatar.url }}" class="img-thumbnail" alt="Avatar" width="250" height="250">
+      {% else %}
+          <img src="https://via.placeholder.com/250" class="img-thumbnail" alt="No Avatar" width="250" height="250">
+      {% endif %}
+    </div>
+
+    <div class="col-md-5">
+      <div class="mb-3">
+          <strong>Username:</strong> <span>{{ profile_user.username }}</span>
+      </div>
+      <div class="mb-3">
+          <strong>First Name:</strong> <span>{{ profile_user.first_name }}</span>
+      </div>
+      <div class="mb-3">
+          <strong>Last Name:</strong> <span>{{ profile_user.last_name }}</span>
+      </div>
+      <div class="mb-3">
+          <strong>Birthday:</strong> <span>{{ profile_user.birthday|default:"Не указан" }}</span>
+      </div>
+      <div class="mb-3">
+          <strong>City:</strong> <span>{{ profile_user.city|default:"Не указан" }}</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+{% endblock %}
