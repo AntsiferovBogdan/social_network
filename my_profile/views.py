@@ -1,4 +1,3 @@
-from django.contrib.auth import REDIRECT_FIELD_NAME
 from django.contrib.auth.mixins import AccessMixin, LoginRequiredMixin
 from django.contrib.auth.views import LoginView
 from django.http import HttpRequest, HttpResponse
